@@ -1,0 +1,30 @@
+# Core libraries for Jupyter notebooks
+jupyter
+notebook
+ipython
+
+# Google AI SDK for Gemini API
+google-generativeai
+
+# API and web requests
+requests
+
+# Image processing
+Pillow
+pdf2image
+
+# Data handling and scientific computing
+numpy
+pandas
+
+# Vector similarity search
+faiss-cpu
+
+# Progress bars for Jupyter
+tqdm
+
+# Environment variable management
+python-dotenv
+
+# Optional but recommended for better notebook experience
+ipywidgets

@@ -40,7 +40,7 @@ This project adapts and extends concepts from Taylor Arnold and Lauren Tilton’
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/tropy-mmllm.git
+git clone https://github.com/lucchesia/tropy-mmllm.git
 cd tropy-mmllm
 ```
 

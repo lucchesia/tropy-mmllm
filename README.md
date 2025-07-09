@@ -103,12 +103,6 @@ ANTHROPIC_API_KEY="your-anthropic-api-key-here"
 - **OpenAI:** https://platform.openai.com/api-keys
 - **Anthropic:** https://console.anthropic.com/
 
-### 4. Enable Tropy REST API
-
-1. Open Tropy
-2. Go to **Edit → Settings** (Windows/Linux) or **Tropy → Settings** (macOS)
-3. Enable **REST API**
-4. Keep Tropy running during processing
 
 ---
 
@@ -126,25 +120,6 @@ jupyter notebook
 5. **Run processing** (Cell 12)
 6. **Attach item summaries** (Cell 13)
 7. **Review AI-generated notes in Tropy**
-
----
-
-## 🧹 Maintenance Tools
-
-### Remove AI-Generated Notes
-
-```python
-# Scan for and remove all AI-generated notes
-remove_ai_notes()
-```
-
-### Reset Processing State
-
-```python
-# Clear checkpoints, embeddings, and summaries to start fresh
-```
-
----
 
 
 ### DH2025 Source Sample

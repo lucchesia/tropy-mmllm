@@ -119,11 +119,13 @@ This utility is required for processing PDF files.
 
 Create a file named `.env` in the project’s root directory.
 
-```bash
-# For macOS/Linux
+- macOS and Linux:  
+  ```bash
 touch .env
+```
 
-# For Windows CMD
+- Windows CMD:
+```powershell
 echo > .env
 ```
 

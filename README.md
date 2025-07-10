@@ -5,124 +5,191 @@ A toolkit for enriching [Tropy](https://tropy.org) archival collections with AI-
 
 This project adapts and extends concepts from Taylor Arnold and Lauren Tilton’s [Explainable Search and Discovery of Visual Cultural Heritage Collections with Multimodal Large Language Models](https://2024.computational-humanities-research.org/papers/paper28/), tailored for transparent metadata creation and explainable AI summaries in cultural heritage contexts. It was developed to support the DH2025 workshop *Transcribing the Vatican Archives: Contextualization, Limits, and Opportunities*, led by Anita Lucchesi and Sean Takats.
 
----
+# Tropy API Multimodal Large Language Models
 
-## 🚀 Features
+A toolkit for enriching [Tropy](https://tropy.org) archival collections with AI-generated summaries and semantic embeddings using multimodal large language models (MMLMs).
 
-### Core Capabilities
-* **Multi-Model Support:** Choose between Google Gemini, OpenAI GPT-4, or Anthropic Claude
-* **Direct Tropy Integration:** Uses Tropy’s local REST API to fetch items, photos, and transcriptions
-* **AI-Powered Photo Summaries:** Generates scholarly-level photo summaries, prioritizing transcriptions while leveraging image context
-* **Item-Level Syntheses:** Combines photo summaries into comprehensive item overviews with suggested titles
-* **Semantic Embeddings:** Creates vector embeddings for advanced search, clustering, or recommendation tasks
-* **Smart Note Creation:** Automatically saves AI-generated summaries as notes in Tropy with clear formatting
-
-### Processing Features
-* **Flexible Selection:** Process entire collections, specific items, or items in lists
-* **Batch Processing:** Efficiently handles large collections with configurable batch sizes
-* **Checkpoint System:** Interrupt and resume processing safely
-* **Rate Limiting:** Respects API limits for stable operation
-* **Clean Slate Tool:** Easily remove AI-generated notes if needed
+This project adapts and extends concepts from Taylor Arnold and Lauren Tilton’s [Explainable Search and Discovery of Visual Cultural Heritage Collections with Multimodal Large Language Models](https://2024.computational-humanities-research.org/papers/paper28/), tailored for transparent metadata creation and explainable AI summaries in cultural heritage contexts. It was developed to support the DH2025 workshop *Transcribing the Vatican Archives: Contextualization, Limits, and Opportunities*, led by Anita Lucchesi and Sean Takats.
 
 ---
 
-## 📋 Requirements
+## Features
 
-* **Tropy** (latest version) with REST API enabled
-* **Python 3.8+**
-* **Jupyter Notebook** or **JupyterLab**
-* **API Key** for at least one AI provider (Google, OpenAI, or Anthropic)
+- **Multi-Model Support:** Choose between Google Gemini, OpenAI GPT-4o, or Anthropic Claude 3.5 Sonnet.
+- **Direct Tropy Integration:** Uses Tropy’s local REST API to fetch project data.
+- **AI-Powered Summaries:** Generates scholarly photo and item-level summaries by analyzing images and transcriptions.
+- **Semantic Embeddings:** Creates vector embeddings for advanced search and clustering.
+- **Automated Note Creation:** Saves machine-generated summaries directly into your Tropy project.
+- **Interactive Analysis:** Search your collection with natural language, discover themes, and enhance metadata in a second, dedicated notebook.
+- **Safe & Resumable:** Features batch processing and a checkpoint system to handle large collections safely.
 
 ---
 
-## ⚙️ Setup
+## Requirements
 
-### 1. Clone the Repository
+- The latest version of Tropy Beta (pre-release 4).
+- Python (version 3.8 to 3.12).
+- Astra UV, a fast, modern Python package installer.
+- An API Key for at least one AI provider (Google, OpenAI, or Anthropic). 
+
+*Nota bene*: For the workshop duration, the Tropy team will provide attendees with courtesy API keys for AI providers. 
+
+---
+
+## Setup Instructions
+
+Please try to complete these steps **before the workshop** if possible — but we will also go through them together on site.
+
+### 1️⃣ Clone or Download the Repository
 
 ```bash
 git clone https://github.com/lucchesia/tropy-mmllm.git
 cd tropy-mmllm
 ```
 
-### 2. Set up Python Environment with Astra UV
-
-[Astra UV](https://github.com/astral-sh/uv) is a fast Python package installer and resolver.
-
-#### **Windows**
-
-```powershell
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-uv venv
-.venv\Scripts\activate
-uv pip install -r requirements.txt
-uv pip install notebook
-```
-
-#### **macOS**
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-# Or using Homebrew
-brew install uv
-
-uv venv
-source .venv/bin/activate
-uv pip install -r requirements.txt
-uv pip install notebook
-```
-
-#### **Linux**
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-uv venv
-source .venv/bin/activate
-uv pip install -r requirements.txt
-uv pip install notebook
-```
-
-### 3. Configure API Keys
-
-Create a `.env` file in the project root:
-
-```bash
-# Google Gemini
-GOOGLE_API_KEY="your-google-api-key-here"
-
-# OpenAI
-OPENAI_API_KEY="your-openai-api-key-here"
-
-# Anthropic Claude
-ANTHROPIC_API_KEY="your-anthropic-api-key-here"
-```
-
-**Get keys here:**
-- **Google AI Studio:** https://makersuite.google.com/app/apikey
-- **OpenAI:** https://platform.openai.com/api-keys
-- **Anthropic:** https://console.anthropic.com/
-
+Alternatively, download as a ZIP and extract.
 
 ---
 
-## 🗺️ Quick Start
+### 2️⃣ Set Up the Python Environment with UV
 
-1. **Start Jupyter Notebook**
+**Astra UV** is a modern replacement for pip and venv.
 
-```bash
-jupyter notebook
+#### Windows
+
+1. Open PowerShell and install UV:
+
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-2. **Open the notebook**: `tropy-mmllm-analysis-multimodels.ipynb`
-3. **Configure your AI provider** (Cell 2)
-4. **Select items to process** (Cell 8)
-5. **Run processing** (Cell 12)
-6. **Attach item summaries** (Cell 13)
-7. **Review AI-generated notes in Tropy**
+2. **Important:** Close and re-open PowerShell for `uv` to become available.
+3. Create and activate the virtual environment, then install packages:
 
+```powershell
+uv venv
+.\.venv\Scripts\Activate.ps1
+uv pip install -r requirements.txt
+```
 
-### DH2025 Source Sample
+---
+
+#### macOS / Linux
+
+1. Open your terminal and install UV:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+2. Create and activate the virtual environment, then install packages:
+
+```bash
+uv venv
+source .venv/bin/activate
+uv pip install -r requirements.txt
+```
+
+**Tip for Linux users:** If `uv` isn’t found after installation, run:
+
+```bash
+source $HOME/.cargo/env
+```
+
+---
+
+### 3️⃣ Install Poppler
+
+This utility is required for processing PDF files.
+
+- macOS (with Homebrew):  
+  ```bash
+  brew install poppler
+  ```
+- Linux (Debian/Ubuntu):  
+  ```bash
+  sudo apt-get install poppler-utils
+  ```
+- Windows:  
+  Download binaries from [Poppler for Windows](http://blog.alivate.com.au/poppler-windows/), unzip, and add the `bin/` folder to your system PATH.
+
+---
+
+### 4️⃣ Configure Your API Keys
+
+Create a file named `.env` in the project’s root directory.
+
+```bash
+# For macOS/Linux
+echo 'GOOGLE_API_KEY="your-key-here"' > .env
+
+# For Windows CMD
+echo GOOGLE_API_KEY="your-key-here" > .env
+```
+
+Open `.env` and add your keys (you only need one, but can add all three):
+
+```txt
+GOOGLE_API_KEY="your-google-api-key-here"
+OPENAI_API_KEY="your-openai-api-key-here"
+ANTHROPIC_API_KEY="your-anthropic-api-key-here"
+```
+
+---
+
+### 5️⃣ Enable the Tropy API
+
+Find and edit Tropy’s `state.json` file:
+
+- macOS: `~/Library/Application Support/Tropy/state.json`
+- Windows: `C:\Users\<YourUser>\AppData\Roaming\Tropy\state.json`
+
+Add `"api": true,` along other config, e.g. `"debug": false,`:
+
+```json
+{
+  "debug": false,
+  "api": true,
+  ...
+}
+```
+Crucial: Make sure to close Tropy before saving `state.json`.
+
+Save the file, then reopen Tropy. The API will be active at `http://localhost:2019`.
+
+---
+
+## Workflow Overview: The Two Notebooks
+
+This project uses a two-stage workflow to ensure clarity and safety.
+
+---
+
+### Notebook 1: `tropy-mmllm-analysis-multimodel.ipynb`
+
+**Purpose:** Data Generation
+
+- Connects to your Tropy project.
+- Lets you choose your AI model.
+- Lets you select which items or lists to process.
+- Generates summaries and embeddings for each photo.
+- Saves results back to Tropy as notes and creates local JSON files (e.g., `tropy_embeddings_[model].json`) for the next stage.
+
+---
+
+### Notebook 2: `tropy-mmllm-queries-multimodel.ipynb`
+
+**Purpose:** Interactive Analysis
+
+- Loads the embeddings and summaries generated earlier.
+- Performs semantic searches on your collection using natural language.
+- Discovers thematic clusters.
+- Enhances item metadata with machine-generated suggested titles.
+- Programmatically tags items based on analysis.
+
+---
+
+## DH2025 Source Sample
 
 For the DH2025 workshop, we selected a focused source sample from the [Serie Ebrei](https://www.vatican.va/roman_curia/secretariat_state/sezione-rapporti-stati/archivio-storico/serie-ebrei/serie-ebrei_it.html) of the Vatican Apostolic Archive, comprising files 001, 035, 067, 068, 148, and 149.
 
@@ -131,3 +198,24 @@ This subset was chosen to represent different thematic strands within the series
 The source sample is available for download here: [Google Drive - DH2025 Source Sample](https://drive.google.com/drive/folders/1FHK9q-j9ZpsWKCXxaBkuaxjUc3nIIxn4?usp=sharing).  
 
 Please download the `.tropy` project file to open and experiment with a ready-to-use Tropy project. Additionally, import the **Vatican Ebrei Series Item template** and **Vatican Ebrei Series Photo template** (both provided as `.ttp` files) to ensure metadata consistency and proper structure. See [here](https://docs.tropy.org/in-the-template-editor/export-import-templates) for how to import or export templates in Tropy.
+
+---
+
+## Transcribe with Tropy 
+
+As part of a conference-wide experiment, a special version of the Tropy transcription plugin will be available along the latest beta release, providing **10 daily credits (images) from July 11–18** for use with the Transkribus service.
+
+This is a great opportunity to generate high-quality transcriptions for your own items before running them through this analysis workflow.  
+**[add Sylvester's final details]**
+
+---
+
+## Ethical Considerations
+
+Working with AI and sensitive historical archives requires critical reflection.
+
+- **Acknowledge Bias:** AI models can perpetuate historical biases. Always critically evaluate the summaries and themes they generate.
+- **Transparency:** Notes and titles created by this workflow are clearly marked as "machine-generated" to distinguish between archival fact and computational interpretation.
+- **Non-Destructive:** We encourage workflows that add information (notes, tags or specific metadata fields) rather than overwrite existing metadata.
+
+Feel free to customize prompts in the notebooks to refine your model outputs and analytical focus according to your research needs.

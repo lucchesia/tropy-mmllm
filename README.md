@@ -121,13 +121,12 @@ Create a file named `.env` in the project’s root directory.
 
 - macOS and Linux:  
   ```bash
-touch .env
-```
-
+  touch .env
+  ```
 - Windows CMD:
-```powershell
-echo > .env
-```
+  ```powershell
+  echo > .env
+  ```
 
 Open `.env` and add your keys (you only need one, but can add all three):
 

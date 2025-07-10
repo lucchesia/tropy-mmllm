@@ -121,10 +121,10 @@ Create a file named `.env` in the project’s root directory.
 
 ```bash
 # For macOS/Linux
-echo 'GOOGLE_API_KEY="your-key-here"' > .env
+touch .env
 
 # For Windows CMD
-echo GOOGLE_API_KEY="your-key-here" > .env
+echo > .env
 ```
 
 Open `.env` and add your keys (you only need one, but can add all three):

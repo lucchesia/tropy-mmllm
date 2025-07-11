@@ -3,13 +3,7 @@
 
 A toolkit for enriching [Tropy](https://tropy.org) archival collections with AI-generated summaries and semantic embeddings using multimodal large language models (MMLMs).
 
-This project adapts and extends concepts from Taylor Arnold and Lauren Tilton’s [Explainable Search and Discovery of Visual Cultural Heritage Collections with Multimodal Large Language Models](https://2024.computational-humanities-research.org/papers/paper28/), tailored for transparent metadata creation and explainable AI summaries in cultural heritage contexts. It was developed to support the DH2025 workshop *Transcribing the Vatican Archives: Contextualization, Limits, and Opportunities*, led by Anita Lucchesi and Sean Takats.
-
-# Tropy API Multimodal Large Language Models
-
-A toolkit for enriching [Tropy](https://tropy.org) archival collections with AI-generated summaries and semantic embeddings using multimodal large language models (MMLMs).
-
-This project adapts and extends concepts from Taylor Arnold and Lauren Tilton’s [Explainable Search and Discovery of Visual Cultural Heritage Collections with Multimodal Large Language Models](https://2024.computational-humanities-research.org/papers/paper28/), tailored for transparent metadata creation and explainable AI summaries in cultural heritage contexts. It was developed to support the DH2025 workshop *Transcribing the Vatican Archives: Contextualization, Limits, and Opportunities*, led by Anita Lucchesi and Sean Takats.
+This project adapts and extends concepts from Taylor Arnold and Lauren Tilton’s [Explainable Search and Discovery of Visual Cultural Heritage Collections with Multimodal Large Language Models](https://2024.computational-humanities-research.org/papers/paper28/), tailored for transparent metadata creation and explainable AI summaries in cultural heritage contexts. It was developed to support the DH2025 workshop *Transcribing the Past, Contextualizing the Present: AI-Assisted Document Contextualization, Limits, and Opportunities*, led by Anita Lucchesi and Sean Takats.
 
 ---
 
@@ -20,14 +14,14 @@ This project adapts and extends concepts from Taylor Arnold and Lauren Tilton’
 - **AI-Powered Summaries:** Generates scholarly photo and item-level summaries by analyzing images and transcriptions.
 - **Semantic Embeddings:** Creates vector embeddings for advanced search and clustering.
 - **Automated Note Creation:** Saves machine-generated summaries directly into your Tropy project.
-- **Interactive Analysis:** Search your collection with natural language, discover themes, and enhance metadata in a second, dedicated notebook.
+- **Interactive Analysis:** Search your collection with natural language, discover themes, and enhance metadata.
 - **Safe & Resumable:** Features batch processing and a checkpoint system to handle large collections safely.
 
 ---
 
 ## Requirements
 
-- The latest version of Tropy Beta (pre-release 4).
+- Tropy Beta 2 (latest versions are available in pre-release, but not optimized yet)
 - Python (version 3.8 to 3.12).
 - Astra UV, a fast, modern Python package installer.
 - An API Key for at least one AI provider (Google, OpenAI, or Anthropic). 
@@ -37,8 +31,6 @@ This project adapts and extends concepts from Taylor Arnold and Lauren Tilton’
 ---
 
 ## Setup Instructions
-
-Please try to complete these steps **before the workshop** if possible — but we will also go through them together on site.
 
 ### 1️⃣ Clone or Download the Repository
 
@@ -117,15 +109,16 @@ This utility is required for processing PDF files.
 
 ### 4️⃣ Configure Your API Keys
 
-Create a file named `.env` in the project’s root directory.
+Create a file named `.env` in the project’s root directory. 
 
-```bash
-# For macOS/Linux
-echo 'GOOGLE_API_KEY="your-key-here"' > .env
-
-# For Windows CMD
-echo GOOGLE_API_KEY="your-key-here" > .env
-```
+- macOS and Linux:  
+  ```bash
+  touch .env
+  ```
+- Windows CMD:
+  ```powershell
+  echo > .env
+  ```
 
 Open `.env` and add your keys (you only need one, but can add all three):
 
@@ -139,10 +132,13 @@ ANTHROPIC_API_KEY="your-anthropic-api-key-here"
 
 ### 5️⃣ Enable the Tropy API
 
-Find and edit Tropy’s `state.json` file:
+Find and open Tropy’s `state.json` file:
 
 - macOS: `~/Library/Application Support/Tropy/state.json`
 - Windows: `C:\Users\<YourUser>\AppData\Roaming\Tropy\state.json`
+- Or, from Tropy 'Help' > Show User-Data Folder
+
+Crucial: Make sure to close Tropy before editing the `state.json`.
 
 Add `"api": true,` along other config, e.g. `"debug": false,`:
 
@@ -153,7 +149,6 @@ Add `"api": true,` along other config, e.g. `"debug": false,`:
   ...
 }
 ```
-Crucial: Make sure to close Tropy before saving `state.json`.
 
 Save the file, then reopen Tropy. The API will be active at `http://localhost:2019`.
 
@@ -191,7 +186,7 @@ This project uses a two-stage workflow to ensure clarity and safety.
 
 ## DH2025 Source Sample
 
-For the DH2025 workshop, we selected a focused source sample from the [Serie Ebrei](https://www.vatican.va/roman_curia/secretariat_state/sezione-rapporti-stati/archivio-storico/serie-ebrei/serie-ebrei_it.html) of the Vatican Apostolic Archive, comprising files 001, 035, 067, 068, 148, and 149.
+For the DH2025 workshop, we selected a focused source sample from the [Serie Ebrei](https://www.vatican.va/roman_curia/secretariat_state/sezione-rapporti-stati/archivio-storico/serie-ebrei/serie-ebrei_it.html) of the Vatican Apostolic Archive, comprising files 001, 035, 067, 068, 148 and 149 with existing transcriptions and file 153 without transcriptions.
 
 This subset was chosen to represent different thematic strands within the series while keeping a practical scale for live demonstration and hands-on analysis. The sample includes **1,389 photos**, distributed across **112 items** in Tropy, providing an ideal balance between richness and manageability for exploring multimodal summarization, metadata enrichment, and digital archival workflows.
 
@@ -203,10 +198,10 @@ Please download the `.tropy` project file to open and experiment with a ready-to
 
 ## Transcribe with Tropy 
 
-As part of a conference-wide experiment, a special version of the Tropy transcription plugin will be available along the latest beta release, providing **10 daily credits (images) from July 11–18** for use with the Transkribus service.
+As part of a this workshop experiment, an early version of the Tropy transcription plugin will be available along with 10 daily credits/images per day running through the workshop until the end of the conference. You will receive a link to download the transcription plugin and the API key by email right before the workshop.
 
 This is a great opportunity to generate high-quality transcriptions for your own items before running them through this analysis workflow.  
-**[add Sylvester's final details]**
+
 
 ---
 

@@ -21,7 +21,7 @@ This project adapts and extends concepts from Taylor Arnold and Lauren Tilton’
 
 ## Requirements
 
-- Tropy Beta 2 (latest versions are available in pre-release, but not optimized yet)
+- [Tropy Beta 2](https://github.com/tropy/tropy/releases/tag/v1.16.3-beta.2)
 - Python (version 3.8 to 3.12).
 - Astra UV, a fast, modern Python package installer.
 - An API Key for at least one AI provider (Google, OpenAI, or Anthropic). 

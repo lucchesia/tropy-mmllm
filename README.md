@@ -188,7 +188,7 @@ This project uses a two-stage workflow to ensure clarity and safety.
 
 For the DH2025 workshop, we selected a focused source sample from the [Serie Ebrei](https://www.vatican.va/roman_curia/secretariat_state/sezione-rapporti-stati/archivio-storico/serie-ebrei/serie-ebrei_it.html) of the Vatican Apostolic Archive, comprising files 001, 035, 067, 068, 148 and 149 with existing transcriptions and file 153 without transcriptions.
 
-This subset was chosen to represent different thematic strands within the series while keeping a practical scale for live demonstration and hands-on analysis. The sample includes **1,389 photos**, distributed across **112 items** in Tropy, providing an ideal balance between richness and manageability for exploring multimodal summarization, metadata enrichment, and digital archival workflows.
+This subset was chosen to represent different thematic strands within the series while keeping a practical scale for live demonstration and hands-on analysis. The sample includes **1,621 photos**, distributed across **128 items** in Tropy, providing an ideal balance between richness and manageability for exploring multimodal summarization, metadata enrichment, and digital archival workflows.
 
 The source sample is available for download here: [Google Drive - DH2025 Source Sample](https://drive.google.com/drive/folders/1FHK9q-j9ZpsWKCXxaBkuaxjUc3nIIxn4?usp=sharing).  
 

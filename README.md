@@ -122,6 +122,8 @@ Create a file named `.env` in the project’s root directory.
 
 Open `.env` and add your keys (you only need one, but can add all three):
 
+e.g. `nano .env` on macOS
+
 ```txt
 GOOGLE_API_KEY="your-google-api-key-here"
 OPENAI_API_KEY="your-openai-api-key-here"
